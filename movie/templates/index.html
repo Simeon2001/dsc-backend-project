@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ff9900" />
+    <link rel="stylesheet" href="{% static 'movie/styles.css' %}" />
+    
+  </head>
+  <body>
+    <h1>Top grossing films of 2014</h1>
+    <nav class="Scroll_Wrapper">
+      {% for b in ur %}
+      <figure id="start" class="Item">
+        <img src="{{ b.pics_url }}" alt="Movie poster of Guardians of the Galaxy" />
+        <figcaption class="Caption">{{ b.genre }}</figcaption>
+        <figcaption class="Caption">{{ b.movie_name }}</figcaption>
+        <figcaption class="Caption">{{ b.year }}</figcaption>
+      </figure>
+      {% endfor %}
+      
+    </nav>
+    <a class="ScrollBtn" href="#start">Start</a>
+    <a class="ScrollBtn" href="#end">End</a>
+  </body>
+</html>
